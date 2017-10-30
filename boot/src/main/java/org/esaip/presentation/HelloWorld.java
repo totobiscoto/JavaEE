@@ -18,8 +18,23 @@ public class HelloWorld {
 	public String dirEtab() {
 		return "dirEtab";
 	}
-	@RequestMapping("/consultationDirecteurEtablissement")
-	public String consultationDirecteurEtab() {
-		return "consultationDirecteurEtab";
+	@RequestMapping("/consultationProbleme")
+	public String consultationProbleme() {
+		return "consultationProbleme";
+	}
+	
+	@RequestMapping("/creationProbleme")
+	public String creationProbleme() {
+		return "creationProbleme";
+	}
+	
+	@RequestMapping("/historiqueInformation")
+	public String historiqueInformation() {
+		return "historiqueInformation";
+	}
+	
+	@RequestMapping("/creationInformation")
+	public String creationInformation() {
+		return "creationInformation";
 	}
 }
