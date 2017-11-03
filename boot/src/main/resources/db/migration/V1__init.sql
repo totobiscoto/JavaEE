@@ -2,17 +2,14 @@
 --        Script SQL_Derby.  
 ------------------------------------------------------------
 
-
 ------------------------------------------------------------
 -- Table: ETUDIANT
 ------------------------------------------------------------
 CREATE TABLE ETUDIANT(
-	ID_ETUDIANT  INT GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1)  ,
+	ID_ETUDIANT  INT AUTO_INCREMENT PRIMARY KEY,
 	nom          Varchar ,
 	prenom       Varchar ,
-	groupe       Integer ,
-	ID_groupe    Int ,
-	PRIMARY KEY (ID_ETUDIANT)
+	ID_groupe    Int
 );
 
 
@@ -20,10 +17,9 @@ CREATE TABLE ETUDIANT(
 -- Table: DIRECTEUR
 ------------------------------------------------------------
 CREATE TABLE DIRECTEUR(
-	ID_directeur  INT GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1)  ,
+	ID_directeur  INT AUTO_INCREMENT PRIMARY KEY,
 	nom           Varchar ,
-	prenom        Varchar ,
-	PRIMARY KEY (ID_directeur)
+	prenom        Varchar
 );
 
 
@@ -31,9 +27,8 @@ CREATE TABLE DIRECTEUR(
 -- Table: INFORMATION
 ------------------------------------------------------------
 CREATE TABLE INFORMATION(
-	ID_information  INT GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1)  ,
-	contenue        Varchar ,
-	PRIMARY KEY (ID_information)
+	ID_information  INT AUTO_INCREMENT PRIMARY KEY,
+	contenue        Varchar
 );
 
 
@@ -41,11 +36,10 @@ CREATE TABLE INFORMATION(
 -- Table: PROBLEME
 ------------------------------------------------------------
 CREATE TABLE PROBLEME(
-	ID_probleme  INT GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1)  ,
+	ID_probleme  INT AUTO_INCREMENT PRIMARY KEY,
 	contenu      Varchar ,
 	creation     Date ,
-	ID_ETUDIANT  Int ,
-	PRIMARY KEY (ID_probleme)
+	ID_ETUDIANT  Int
 );
 
 
@@ -53,11 +47,10 @@ CREATE TABLE PROBLEME(
 -- Table: GROUPE
 ------------------------------------------------------------
 CREATE TABLE GROUPE(
-	ID_groupe        INT GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1)  ,
+	ID_groupe        int AUTO_INCREMENT PRIMARY KEY,
 	classe           Varchar ,
 	limite_probleme  Smallint ,
-	ID_directeur     Int ,
-	PRIMARY KEY (ID_groupe)
+	ID_directeur     Int
 );
 
 
@@ -65,7 +58,7 @@ CREATE TABLE GROUPE(
 -- Table: VOTE_PROBLEME
 ------------------------------------------------------------
 CREATE TABLE VOTE_PROBLEME(
-	jaime        BOOL  ,
+	jaime        BOOL ,
 	ID_ETUDIANT  Int ,
 	ID_probleme  Int ,
 	PRIMARY KEY (ID_ETUDIANT,ID_probleme)
