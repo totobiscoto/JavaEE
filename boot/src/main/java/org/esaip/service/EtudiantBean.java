@@ -1,9 +1,12 @@
 package org.esaip.service;
 
+import org.springframework.stereotype.Component;
+
 /**
  * Classe qui represente un Etudiant.
  * 
  */
+@Component
 public class EtudiantBean {
     
     public EtudiantBean() {

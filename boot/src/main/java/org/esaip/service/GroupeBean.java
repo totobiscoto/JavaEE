@@ -1,9 +1,12 @@
 package org.esaip.service;
 
+import org.springframework.stereotype.Component;
+
 /**
  * Classe qui represente un Groupe.
  * 
  */
+@Component
 public class GroupeBean {
     
     public GroupeBean() {

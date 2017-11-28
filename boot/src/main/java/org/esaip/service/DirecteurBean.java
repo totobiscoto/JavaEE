@@ -1,9 +1,12 @@
 package org.esaip.service;
 
+import org.springframework.stereotype.Component;
+
 /**
  * Classe qui represente un directeur.
  * 
  */
+@Component
 public class DirecteurBean {
     
     public DirecteurBean() {

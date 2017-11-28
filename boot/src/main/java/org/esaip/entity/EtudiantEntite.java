@@ -34,11 +34,7 @@ public class EtudiantEntite implements Serializable {
 	  @JoinColumn(name="ID_groupe")
 	  private GroupeEntite groupe;
 	
-	@ManyToMany
-	  @JoinTable(
-	      name="VOTE_PROBLEME",
-	      joinColumns=@JoinColumn(name="ID_etudiant", referencedColumnName="ID_etudiant"),
-	      inverseJoinColumns=@JoinColumn(name="ID_probleme", referencedColumnName="ID_probleme"))
+	 @OneToMany(mappedBy="etudiant")
 	  private List<ProblemeEntite> listProblemeVote;
 	
 	@OneToMany(mappedBy="problemeCreer")

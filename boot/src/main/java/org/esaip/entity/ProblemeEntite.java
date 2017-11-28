@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @Entity
 @Table(name="PROBLEME")
@@ -29,7 +30,7 @@ public class ProblemeEntite implements Serializable {
 	@Column(name="ID_etudiant")	
 	private int idEtudiant;	
 	
-	@ManyToMany(mappedBy="probleme")
+	 @OneToMany(mappedBy="probleme")
 	  private List<EtudiantEntite> listEtudiant;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
