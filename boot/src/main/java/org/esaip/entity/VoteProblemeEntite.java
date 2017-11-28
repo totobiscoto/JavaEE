@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 @Entity
 @Table(name="VOTE_PROBLEME")
@@ -17,7 +19,15 @@ public class VoteProblemeEntite implements Serializable { //TODO
         private int idEtudiant;  
 	@Column(name="ID_probleme")
         private int idProbleme;
-		
+	
+	@ManyToOne
+	  @PrimaryKeyJoinColumn(name="ID_etudiant", referencedColumnName="ID_etudiant")
+	  private EtudiantEntite etudiant;
+	
+	  @ManyToOne
+	  @PrimaryKeyJoinColumn(name="ID_probleme", referencedColumnName="ID_probleme")	
+	  private ProblemeEntite probleme;
+	  
 	public int getEtudiantId() {
 		return idEtudiant;
 	}
