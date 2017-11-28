@@ -16,7 +16,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 @Entity
 @Table(name="PROBLEME")
-public class Probleme implements Serializable { 
+public class ProblemeEntite implements Serializable { 
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -30,11 +30,11 @@ public class Probleme implements Serializable {
 	private int idEtudiant;	
 	
 	@ManyToMany(mappedBy="probleme")
-	  private List<Etudiant> listEtudiant;
+	  private List<EtudiantEntite> listEtudiant;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
 	  @JoinColumn(name="ID_etudiant")
-	  private Etudiant etudiant;
+	  private EtudiantEntite etudiant;
 	
 	public int getIdProbleme() {
 		return idProbleme;

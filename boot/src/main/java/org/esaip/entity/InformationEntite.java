@@ -12,7 +12,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 @Entity
 @Table(name="INFORMATION")
-public class Information implements Serializable { 
+public class InformationEntite implements Serializable { 
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -22,7 +22,7 @@ public class Information implements Serializable {
         private String contenueInformation;
 	
 	@ManyToMany(mappedBy="groupe")
-	  private List<Groupe> groupe;
+	  private List<GroupeEntite> groupe;
 	
 	public int getIdInformation() {
 		return idInformation;

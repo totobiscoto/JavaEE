@@ -17,7 +17,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @Entity
 @Table(name="GROUPE")
-public class Groupe implements Serializable { 
+public class GroupeEntite implements Serializable { 
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -31,31 +31,19 @@ public class Groupe implements Serializable {
 	private int idDirecteur;
 	
 	@OneToMany(mappedBy="etudiant")
-	  private List<Etudiant> listEtudiant;
+	  private List<EtudiantEntite> listEtudiant;
 
 	@ManyToOne(fetch=FetchType.LAZY)
 	  @JoinColumn(name="ID_directeur")
-	  private Directeur directeur;
+	  private DirecteurEntite directeur;
 	
 	@ManyToMany
 	  @JoinTable(
 	      name="CONCERNE",
 	      joinColumns=@JoinColumn(name="ID_groupe", referencedColumnName="ID_groupe"),
 	      inverseJoinColumns=@JoinColumn(name="ID_information", referencedColumnName="ID_information"))
-	  private List<Information> listInformation;
+	  private List<InformationEntite> listInformation;
 	
-	public Directeur getDirecteur() {
-		return directeur;
-	}
-	public void setDirecteur(Directeur directeur) {
-		this.directeur = directeur;
-	}
-	public List<Etudiant> getListEtudiant() {
-		return listEtudiant;
-	}
-	public void setListEtudiant(List<Etudiant> listEtudiant) {
-		this.listEtudiant = listEtudiant;
-	}
 	public int getIdGroupe() {
 		return idGroupe;
 	}

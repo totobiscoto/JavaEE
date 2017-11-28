@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
 @Table(name="CONCERNE")
-public class Concerne implements Serializable { 
+public class ConcerneEntite implements Serializable { 
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)

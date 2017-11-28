@@ -12,7 +12,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @Entity
 @Table(name="DIRECTEUR")
-public class Directeur implements Serializable { 
+public class DirecteurEntite implements Serializable { 
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -24,16 +24,8 @@ public class Directeur implements Serializable {
 	private String prenomDirecteur;
 	
 	@OneToMany(mappedBy="groupe")
-	  private List<Groupe> listGroupe;
-	
-	
-	
-	public List<Groupe> getListGroupe() {
-		return listGroupe;
-	}
-	public void setListGroupe(List<Groupe> listGroupe) {
-		this.listGroupe = listGroupe;
-	}
+	  private List<GroupeEntite> listGroupe;
+
 	public int getIdDirecteur() {
 		return idDirecteur;
 	}

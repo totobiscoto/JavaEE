@@ -9,8 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
 @Table(name="VOTE_PROBLEME")
-public class VoteProbleme implements Serializable { 
-	private static final long serialVersionUID = 1L;
+public class VoteProblemeEntite implements Serializable { //TODO
+	/*private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="ID_etudiant")
@@ -24,11 +24,11 @@ public class VoteProbleme implements Serializable {
 	@Column(name="ID_groupe")	
 	private int groupeId;
 	
-	public int getArticleId() {
+	public int getEtudiantId() {
 		return idEtudiant;
 	}
-	public void setArticleId(int articleId) {
-		this.idEtudiant = articleId;
+	public void setEtudiantId(int etudiantId) {
+		this.idEtudiant = etudiantId;
 	}
 	public String getTitle() {
 		return nomEtudiant;
@@ -53,5 +53,5 @@ public class VoteProbleme implements Serializable {
 	}
 	public void setGroupeID(int groupeId) {
 		this.groupeId = groupeId;
-	}
+	}*/
 }  

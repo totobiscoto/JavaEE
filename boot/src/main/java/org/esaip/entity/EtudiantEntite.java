@@ -17,7 +17,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @Entity
 @Table(name="ETUDIANT")
-public class Etudiant implements Serializable { 
+public class EtudiantEntite implements Serializable { 
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -32,40 +32,34 @@ public class Etudiant implements Serializable {
 	
 	@ManyToOne(fetch=FetchType.LAZY)
 	  @JoinColumn(name="ID_groupe")
-	  private Groupe groupe;
+	  private GroupeEntite groupe;
 	
 	@ManyToMany
 	  @JoinTable(
 	      name="VOTE_PROBLEME",
 	      joinColumns=@JoinColumn(name="ID_etudiant", referencedColumnName="ID_etudiant"),
 	      inverseJoinColumns=@JoinColumn(name="ID_probleme", referencedColumnName="ID_probleme"))
-	  private List<Probleme> listProblemeVote;
+	  private List<ProblemeEntite> listProblemeVote;
 	
 	@OneToMany(mappedBy="problemeCreer")
-	  private List<Probleme> listProblemeCreer;
+	  private List<ProblemeEntite> listProblemeCreer;
 	
-	public Groupe getGroupe() {
-		return groupe;
-	}
-	public void setGroupe(Groupe groupe) {
-		this.groupe = groupe;
-	}
-	public int getArticleId() {
+	public int getEtudiantId() {
 		return idEtudiant;
 	}
-	public void setArticleId(int articleId) {
-		this.idEtudiant = articleId;
+	public void setEtudiantId(int idEtudiant) {
+		this.idEtudiant = idEtudiant;
 	}
-	public String getTitle() {
+	public String getNomEtudiant() {
 		return nomEtudiant;
 	}
-	public void setTitle(String nomEtudiant) {
+	public void setNomEtudiant(String nomEtudiant) {
 		this.nomEtudiant = nomEtudiant;
 	}
-	public String getPrenom() {
+	public String getPrenomEtudiant() {
 		return prenomEtudiant;
 	}
-	public void setPrenom(String prenomEtudiant) {
+	public void setPrenomEtudiant(String prenomEtudiant) {
 		this.prenomEtudiant = prenomEtudiant;
 	}
 	public int getGroupeEtudiant() {
