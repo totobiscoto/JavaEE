@@ -12,5 +12,7 @@ import org.esaip.entity.ProblemeEntite;
  */
 @Repository
 public class ProblemeDAO extends GenericDAO<ProblemeEntite> implements IProblemeDAO {
+	
+	
 
 }
