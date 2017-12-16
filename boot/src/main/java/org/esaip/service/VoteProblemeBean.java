@@ -19,7 +19,7 @@ public class VoteProblemeBean {
 	private int idEtudiant;
 
 	/**
-	 * Id du problèmee suivant le vote.
+	 * Id du problème suivant le vote.
 	 */
 	private int idProbleme;
 

@@ -23,7 +23,7 @@ public class InformationEntite implements Serializable {
 	
 	@ManyToMany(mappedBy="groupe")
 	  private List<GroupeEntite> groupe;
-	
+	DirecteurEntite directeur;
 	public int getIdInformation() {
 		return idInformation;
 	}
@@ -35,6 +35,12 @@ public class InformationEntite implements Serializable {
 	}
 	public void setContenueInformation(String contenueInformation) {
 		this.contenueInformation = contenueInformation;
+	}
+	public DirecteurEntite getDirecteur() {
+		return directeur;
+	}
+	public void setDirecteur(DirecteurEntite directeur) {
+		this.directeur = directeur;
 	}
 
 }  

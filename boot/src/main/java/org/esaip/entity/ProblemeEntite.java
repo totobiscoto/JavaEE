@@ -26,7 +26,7 @@ public class ProblemeEntite implements Serializable {
 	@Column(name="contenu")
     private String contenuProbleme;
 	@Column(name="creation")	
-	private Date dateProbleme;
+	private long dateProbleme;
 	@Column(name="ID_etudiant")	
 	private int idEtudiant;	
 	
@@ -49,10 +49,10 @@ public class ProblemeEntite implements Serializable {
 	public void setContenuProbleme(String contenuProbleme) {
 		this.contenuProbleme = contenuProbleme;
 	}
-	public Date getDateProbleme() {
+	public long getDateProbleme() {
 		return dateProbleme;
 	}
-	public void setDateProbleme(Date dateProbleme) {
+	public void setDateProbleme(long dateProbleme) {
 		this.dateProbleme = dateProbleme;
 	}
 	public int getIdEtudiant() {
