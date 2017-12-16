@@ -21,9 +21,7 @@ public class DirecteurDAO {
 	private EntityManager em;
 
 	public List<DirecteurEntite> allDirecteur() {
-		List<DirecteurEntite> directeur;
-		directeur = em.createQuery("SELECT d FROM DIRECTEUR d").getResultList();
-		return directeur;
+		return em.createQuery("SELECT d FROM DIRECTEUR d", DirecteurEntite.class).getResultList();
 	}
 
 	public DirecteurEntite directeurId(long id) {
