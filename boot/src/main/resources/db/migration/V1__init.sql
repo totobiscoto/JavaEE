@@ -28,7 +28,8 @@ CREATE TABLE DIRECTEUR(
 ------------------------------------------------------------
 CREATE TABLE INFORMATION(
 	ID_information  INT AUTO_INCREMENT PRIMARY KEY,
-	contenue        Varchar
+	contenue        Varchar	
+	ID_directeur     Int
 );
 
 
@@ -58,21 +59,12 @@ CREATE TABLE GROUPE(
 -- Table: VOTE_PROBLEME
 ------------------------------------------------------------
 CREATE TABLE VOTE_PROBLEME(
-	jaime        BOOL ,
 	ID_ETUDIANT  Int ,
 	ID_probleme  Int ,
 	PRIMARY KEY (ID_ETUDIANT,ID_probleme)
 );
 
 
-------------------------------------------------------------
--- Table: CONCERNE
-------------------------------------------------------------
-CREATE TABLE CONCERNE(
-	ID_groupe       Int ,
-	ID_information  Int ,
-	PRIMARY KEY (ID_groupe,ID_information)
-);
 
 
 
@@ -81,6 +73,6 @@ ALTER TABLE PROBLEME ADD FOREIGN KEY (ID_ETUDIANT) REFERENCES ETUDIANT(ID_ETUDIA
 ALTER TABLE GROUPE ADD FOREIGN KEY (ID_directeur) REFERENCES DIRECTEUR(ID_directeur);
 ALTER TABLE VOTE_PROBLEME ADD FOREIGN KEY (ID_ETUDIANT) REFERENCES ETUDIANT(ID_ETUDIANT);
 ALTER TABLE VOTE_PROBLEME ADD FOREIGN KEY (ID_probleme) REFERENCES PROBLEME(ID_probleme);
-ALTER TABLE CONCERNE ADD FOREIGN KEY (ID_groupe) REFERENCES GROUPE(ID_groupe);
-ALTER TABLE CONCERNE ADD FOREIGN KEY (ID_information) REFERENCES INFORMATION(ID_information);
+ALTER TABLE INFORMATION ADD FOREIGN KEY (ID_directeur) REFERENCES DIRECTEUR(ID_directeur);
+
 
